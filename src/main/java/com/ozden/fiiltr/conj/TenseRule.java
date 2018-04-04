@@ -15,8 +15,8 @@ public enum TenseRule implements Rule {
         class PresentContinuousSpecialCase implements Function<StringBuilder, StringBuilder> {
             @Override
             public StringBuilder apply(StringBuilder s) {
-                String ending = PRESENT_CONT_WORDS.get(s.charAt(s.length()-1));
-                s.deleteCharAt(s.length()-1);
+                String ending = PRESENT_CONT_WORDS.get(s.charAt(s.length() - 1));
+                s.deleteCharAt(s.length() - 1);
                 return s.append(ending);
             }
         }
