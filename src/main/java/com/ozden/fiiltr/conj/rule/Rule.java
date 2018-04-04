@@ -5,5 +5,5 @@ public interface Rule {
 
     default int getOrder() {
         return 0;
-    };
+    }
 }
