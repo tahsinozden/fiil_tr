@@ -1,4 +1,6 @@
-package com.ozden.fiiltr.conj;
+package com.ozden.fiiltr.conj.rule;
+
+import com.ozden.fiiltr.conj.CommonUtils;
 
 import java.util.HashMap;
 import java.util.Map;

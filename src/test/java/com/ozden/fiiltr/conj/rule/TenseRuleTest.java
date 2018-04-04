@@ -1,4 +1,4 @@
-package com.ozden.fiiltr.conj;
+package com.ozden.fiiltr.conj.rule;
 
 import org.junit.Test;
 

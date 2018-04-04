@@ -1,4 +1,6 @@
-package com.ozden.fiiltr.conj;
+package com.ozden.fiiltr.conj.rule;
+
+import com.ozden.fiiltr.conj.CommonUtils;
 
 public enum ImperativeRule implements Rule {
     AFFIRMATIVE {
