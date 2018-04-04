@@ -8,8 +8,8 @@ public enum TenseRule implements Rule {
 
     PRESENT_CONTINUOUS {
         @Override
-        public String apply(String word) {
-            return TenseRule.ruleEngine(word, PRESENT_CONT_WORDS, new PresentContinuousSpecialCase()).toString();
+        public StringBuilder apply(String word) {
+            return ruleEngine(word, PRESENT_CONT_WORDS, new PresentContinuousSpecialCase());
         }
 
         class PresentContinuousSpecialCase implements Function<StringBuilder, StringBuilder> {
@@ -23,8 +23,8 @@ public enum TenseRule implements Rule {
     },
     FUTURE {
         @Override
-        public String apply(String word) {
-            return TenseRule.ruleEngine(word, FUTURE_WORDS, new FutureSpecialCase()).toString();
+        public StringBuilder apply(String word) {
+            return ruleEngine(word, FUTURE_WORDS, new FutureSpecialCase());
         }
 
         class FutureSpecialCase implements Function<StringBuilder, StringBuilder> {
@@ -63,7 +63,7 @@ public enum TenseRule implements Rule {
     }
 
     private static StringBuilder ruleEngine(String word, Map<Character, String> wordRules, Function<StringBuilder, StringBuilder> specialCase) {
-        StringBuilder root = TenseRule.removeVerbEnding(word);
+        StringBuilder root = CommonUtils.removeVerbEnding(word);
         if (root.length() < 2) {
             return new StringBuilder(word);
         }
@@ -81,9 +81,6 @@ public enum TenseRule implements Rule {
         return root.append(ending);
     }
 
-    private static StringBuilder removeVerbEnding(String word) {
-        return new StringBuilder(word.endsWith("mek") || word.endsWith("mak") ? word.substring(0, word.length() - 3) : "");
-    }
 
     @Override
     public int getOrder() {
