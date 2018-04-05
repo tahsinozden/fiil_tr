@@ -5,14 +5,14 @@ import com.ozden.fiiltr.conj.CommonUtils;
 public enum ImperativeRule implements Rule {
     AFFIRMATIVE {
         @Override
-        public StringBuilder apply(String word) {
-            return CommonUtils.removeVerbEnding(word);
+        public void apply(StringBuilder word) {
+            CommonUtils.removeVerbEnding(word);
         }
     },
     NEGATIVE {
         @Override
-        public StringBuilder apply(String word) {
-            return new StringBuilder(word.substring(0, word.length() - 1));
+        public void apply(StringBuilder word) {
+            word.deleteCharAt(word.length() - 1);
         }
     };
 

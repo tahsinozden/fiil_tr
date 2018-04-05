@@ -8,74 +8,96 @@ public class TenseRuleTest {
 
     @Test
     public void shouldApplyPresentContinuousTense() {
-        String word = "ağlamak";
-        assertEquals("ağlıyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        StringBuilder word = new StringBuilder("ağlamak");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("ağlıyor", word.toString());
 
-        word = "görmek";
-        assertEquals("görüyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("görmek");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("görüyor", word.toString());
 
-        word = "öpmek";
-        assertEquals("öpüyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("öpmek");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("öpüyor", word.toString());
 
-        word = "gelmek";
-        assertEquals("geliyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("gelmek");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("geliyor", word.toString());
 
-        word = "kalmak";
-        assertEquals("kalıyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("kalmak");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("kalıyor", word.toString());
 
-        word = "susmak";
-        assertEquals("susuyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("susmak");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("susuyor", word.toString());
 
-        word = "üşümek";
-        assertEquals("üşüyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("üşümek");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("üşüyor", word.toString());
 
-        word = "olmak";
-        assertEquals("oluyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("olmak");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("oluyor", word.toString());
 
-        word = "ısırmak";
-        assertEquals("ısırıyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("ısırmak");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("ısırıyor", word.toString());
 
-        word = "incitmek";
-        assertEquals("incitiyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("incitmek");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("incitiyor", word.toString());
 
-        word = "artmak";
-        assertEquals("artıyor", TenseRule.PRESENT_CONTINUOUS.apply(word).toString());
+        word = new StringBuilder("artmak");
+        TenseRule.PRESENT_CONTINUOUS.apply(word);
+        assertEquals("artıyor", word.toString());
     }
 
     @Test
     public void shouldApplyPresentFutureTense() {
-        String word = "ağlamak";
-        assertEquals("ağlayacak", TenseRule.FUTURE.apply(word).toString());
+        StringBuilder word = new StringBuilder("ağlamak");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("ağlayacak", word.toString());
 
-        word = "görmek";
-        assertEquals("görecek", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("görmek");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("görecek", word.toString());
 
-        word = "öpmek";
-        assertEquals("öpecek", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("öpmek");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("öpecek", word.toString());
 
-        word = "gelmek";
-        assertEquals("gelecek", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("gelmek");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("gelecek", word.toString());
 
-        word = "kalmak";
-        assertEquals("kalacak", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("kalmak");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("kalacak", word.toString());
 
-        word = "susmak";
-        assertEquals("susacak", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("susmak");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("susacak", word.toString());
 
-        word = "üşümek";
-        assertEquals("üşüyecek", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("üşümek");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("üşüyecek", word.toString());
 
-        word = "olmak";
-        assertEquals("olacak", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("olmak");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("olacak", word.toString());
 
-        word = "ısırmak";
-        assertEquals("ısıracak", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("ısırmak");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("ısıracak", word.toString());
 
-        word = "incitmek";
-        assertEquals("incitecek", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("incitmek");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("incitecek", word.toString());
 
-        word = "artmak";
-        assertEquals("artacak", TenseRule.FUTURE.apply(word).toString());
+        word = new StringBuilder("artmak");
+        TenseRule.FUTURE.apply(word);
+        assertEquals("artacak", word.toString());
     }
 
 }

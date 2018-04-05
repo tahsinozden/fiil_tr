@@ -8,73 +8,95 @@ public class ImperativeRuleTest {
 
     @Test
     public void shouldConjugateAffirmativeImperative() {
-        String word = "ağlamak";
-        assertEquals("ağla", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        StringBuilder word = new StringBuilder("ağlamak");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("ağla", word.toString());
 
-        word = "görmek";
-        assertEquals("gör", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("görmek");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("gör", word.toString());
 
-        word = "öpmek";
-        assertEquals("öp", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("öpmek");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("öp", word.toString());
 
-        word = "gelmek";
-        assertEquals("gel", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("gelmek");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("gel", word.toString());
 
-        word = "kalmak";
-        assertEquals("kal", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("kalmak");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("kal", word.toString());
 
-        word = "susmak";
-        assertEquals("sus", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("susmak");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("sus", word.toString());
 
-        word = "üşümek";
-        assertEquals("üşü", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("üşümek");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("üşü", word.toString());
 
-        word = "olmak";
-        assertEquals("ol", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("olmak");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("ol", word.toString());
 
-        word = "ısırmak";
-        assertEquals("ısır", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("ısırmak");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("ısır", word.toString());
 
-        word = "incitmek";
-        assertEquals("incit", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("incitmek");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("incit", word.toString());
 
-        word = "artmak";
-        assertEquals("art", ImperativeRule.AFFIRMATIVE.apply(word).toString());
+        word = new StringBuilder("artmak");
+        ImperativeRule.AFFIRMATIVE.apply(word);
+        assertEquals("art", word.toString());
     }
 
     @Test
     public void shouldConjugateNegativeImperative() {
-        String word = "ağlamak";
-        assertEquals("ağlama", ImperativeRule.NEGATIVE.apply(word).toString());
+        StringBuilder word = new StringBuilder("ağlamak");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("ağlama", word.toString());
 
-        word = "görmek";
-        assertEquals("görme", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("görmek");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("görme", word.toString());
 
-        word = "öpmek";
-        assertEquals("öpme", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("öpmek");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("öpme", word.toString());
 
-        word = "gelmek";
-        assertEquals("gelme", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("gelmek");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("gelme", word.toString());
 
-        word = "kalmak";
-        assertEquals("kalma", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("kalmak");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("kalma", word.toString());
 
-        word = "susmak";
-        assertEquals("susma", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("susmak");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("susma", word.toString());
 
-        word = "üşümek";
-        assertEquals("üşüme", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("üşümek");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("üşüme", word.toString());
 
-        word = "olmak";
-        assertEquals("olma", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("olmak");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("olma", word.toString());
 
-        word = "ısırmak";
-        assertEquals("ısırma", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("ısırmak");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("ısırma", word.toString());
 
-        word = "incitmek";
-        assertEquals("incitme", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("incitmek");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("incitme", word.toString());
 
-        word = "artmak";
-        assertEquals("artma", ImperativeRule.NEGATIVE.apply(word).toString());
+        word = new StringBuilder("artmak");
+        ImperativeRule.NEGATIVE.apply(word);
+        assertEquals("artma", word.toString());
     }
 }

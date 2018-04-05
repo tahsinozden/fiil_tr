@@ -4,39 +4,37 @@ import com.ozden.fiiltr.conj.CommonUtils;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Function;
+import java.util.function.Consumer;
 
 public enum TenseRule implements Rule {
 
     PRESENT_CONTINUOUS {
         @Override
-        public StringBuilder apply(String word) {
-            return applyRuleEngine(word, PRESENT_CONT_WORDS, new PresentContinuousSpecialCase());
+        public void apply(StringBuilder word) {
+            applyRuleEngine(word, PRESENT_CONT_WORDS, new PresentContinuousSpecialCase());
         }
 
-        class PresentContinuousSpecialCase implements Function<StringBuilder, StringBuilder> {
+        class PresentContinuousSpecialCase implements Consumer<StringBuilder> {
             @Override
-            public StringBuilder apply(StringBuilder s) {
+            public void accept(StringBuilder s) {
 //                String ending = PRESENT_CONT_WORDS.get(s.charAt(s.length() - 1));
-                String ending = findEndingWordRoot(s.toString(), PRESENT_CONT_WORDS);
-                s.deleteCharAt(s.length() - 1);
-                return s.append(ending);
+                String ending = determineEndingFromWordRoot(s.toString(), PRESENT_CONT_WORDS);
+                s.deleteCharAt(s.length() - 1).append(ending);
             }
         }
     },
     FUTURE {
         @Override
-        public StringBuilder apply(String word) {
-            return applyRuleEngine(word, FUTURE_WORDS, new FutureSpecialCase());
+        public void apply(StringBuilder word) {
+            applyRuleEngine(word, FUTURE_WORDS, new FutureSpecialCase());
         }
 
-        class FutureSpecialCase implements Function<StringBuilder, StringBuilder> {
+        class FutureSpecialCase implements Consumer<StringBuilder> {
             @Override
-            public StringBuilder apply(StringBuilder s) {
+            public void accept(StringBuilder s) {
 //                String ending = FUTURE_WORDS.get(s.charAt(s.length() - 1));
-                String ending = findEndingWordRoot(s.toString(), FUTURE_WORDS);
-                s.append("y");
-                return s.append(ending);
+                String ending = determineEndingFromWordRoot(s.toString(), FUTURE_WORDS);
+                s.append("y").append(ending);
             }
         }
     };
@@ -66,26 +64,27 @@ public enum TenseRule implements Rule {
         FUTURE_WORDS.put('ö', "ecek");
     }
 
-    private static StringBuilder applyRuleEngine(String word, Map<Character, String> wordRules, Function<StringBuilder, StringBuilder> specialCase) {
-        StringBuilder root = CommonUtils.removeVerbEnding(word);
-        if (root.length() < 2) {
-            return new StringBuilder(word);
+    private static void applyRuleEngine(StringBuilder word, Map<Character, String> wordRules, Consumer<StringBuilder> specialCase) {
+        CommonUtils.removeVerbEnding(word);
+        if (word.length() < 2) {
+            return;
         }
 
-        String ending = wordRules.get(root.charAt(root.length() - 1));
+        String ending = wordRules.get(word.charAt(word.length() - 1));
         // in case of last character is a vowel
         if (ending != null) {
-            return specialCase.apply(root);
+            specialCase.accept(word);
+            return;
         }
 
-        for (int i = root.length() - 2; i >= 0; --i) {
-            ending = wordRules.get(root.charAt(i));
+        for (int i = word.length() - 2; i >= 0; --i) {
+            ending = wordRules.get(word.charAt(i));
             if (ending != null) break;
         }
-        return root.append(ending);
+        word.append(ending);
     }
 
-    private static String findEndingWordRoot(String word, Map<Character, String> wordRules) {
+    private static String determineEndingFromWordRoot(String word, Map<Character, String> wordRules) {
         word = CommonUtils.removeCommonVerbEndings(word);
         if (word.length() < 2) {
             return word;

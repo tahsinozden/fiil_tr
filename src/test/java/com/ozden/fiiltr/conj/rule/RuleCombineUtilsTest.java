@@ -18,38 +18,49 @@ public class RuleCombineUtilsTest {
                 NegativeSentenceRule.NEGATIVE
         );
 
-        String word = "ağlamak";
-        assertEquals("ağlamıyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        StringBuilder word = new StringBuilder("ağlamak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("ağlamıyor", word.toString());
 
-        word = "görmek";
-        assertEquals("görmüyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("görmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("görmüyor", word.toString());
 
-        word = "öpmek";
-        assertEquals("öpmüyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("öpmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("öpmüyor", word.toString());
 
-        word = "gelmek";
-        assertEquals("gelmiyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("gelmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("gelmiyor", word.toString());
 
-        word = "kalmak";
-        assertEquals("kalmıyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("kalmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("kalmıyor", word.toString());
 
-        word = "susmak";
-        assertEquals("susmuyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("susmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("susmuyor", word.toString());
 
-        word = "üşümek";
-        assertEquals("üşümüyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("üşümek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("üşümüyor", word.toString());
 
-        word = "olmak";
-        assertEquals("olmuyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("olmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("olmuyor", word.toString());
 
-        word = "ısırmak";
-        assertEquals("ısırmıyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("ısırmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("ısırmıyor", word.toString());
 
-        word = "incitmek";
-        assertEquals("incitmiyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("incitmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("incitmiyor", word.toString());
 
-        word = "artmak";
-        assertEquals("artmıyor", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("artmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("artmıyor", word.toString());
     }
 
     @Test
@@ -59,37 +70,48 @@ public class RuleCombineUtilsTest {
                 NegativeSentenceRule.NEGATIVE
         );
 
-        String word = "ağlamak";
-        assertEquals("ağlamayacak", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        StringBuilder word = new StringBuilder("ağlamak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("ağlamayacak", word.toString());
 
-        word = "görmek";
-        assertEquals("görmeyecek", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("görmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("görmeyecek", word.toString());
 
-        word = "öpmek";
-        assertEquals("öpmeyecek", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("öpmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("öpmeyecek", word.toString());
 
-        word = "gelmek";
-        assertEquals("gelmeyecek", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("gelmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("gelmeyecek", word.toString());
 
-        word = "kalmak";
-        assertEquals("kalmayacak", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("kalmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("kalmayacak", word.toString());
 
-        word = "susmak";
-        assertEquals("susmayacak", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("susmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("susmayacak", word.toString());
 
-        word = "üşümek";
-        assertEquals("üşümeyecek", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("üşümek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("üşümeyecek", word.toString());
 
-        word = "olmak";
-        assertEquals("olmayacak", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("olmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("olmayacak", word.toString());
 
-        word = "ısırmak";
-        assertEquals("ısırmayacak", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("ısırmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("ısırmayacak", word.toString());
 
-        word = "incitmek";
-        assertEquals("incitmeyecek", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("incitmek");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("incitmeyecek", word.toString());
 
-        word = "artmak";
-        assertEquals("artmayacak", RuleCombineUtils.applyMultipleRules(word, rules).toString());
+        word = new StringBuilder("artmak");
+        RuleCombineUtils.applyMultipleRules(word, rules);
+        assertEquals("artmayacak", word.toString());
     }
 }
