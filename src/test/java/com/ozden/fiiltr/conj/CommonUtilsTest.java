@@ -8,13 +8,16 @@ public class CommonUtilsTest {
 
     @Test
     public void shouldRemoveVerbEnding() {
-        String verb = "almak";
-        assertEquals("al", CommonUtils.removeVerbEnding(verb).toString());
+        StringBuilder verb = new StringBuilder("almak");
+        CommonUtils.removeVerbEnding(verb);
+        assertEquals("al", verb.toString());
 
-        verb = "gelmek";
-        assertEquals("gel", CommonUtils.removeVerbEnding(verb).toString());
+        verb = new StringBuilder("gelmek");
+        CommonUtils.removeVerbEnding(verb);
+        assertEquals("gel", verb.toString());
 
-        verb = "blabla";
-        assertEquals("blabla", CommonUtils.removeVerbEnding(verb).toString());
+        verb = new StringBuilder("blabla");
+        CommonUtils.removeVerbEnding(verb);
+        assertEquals("blabla", verb.toString());
     }
 }

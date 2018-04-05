@@ -6,14 +6,9 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class RuleCombineUtils {
-    public static StringBuilder applyMultipleRules(String word, List<Rule> rules) {
+    public static void applyMultipleRules(StringBuilder word, List<Rule> rules) {
         Set<Rule> sortedRules = new TreeSet<>(Comparator.comparingInt(Rule::getOrder));
         sortedRules.addAll(rules);
-
-        StringBuilder result = new StringBuilder(word);
-        for (Rule rule : sortedRules) {
-            result = rule.apply(result.toString());
-        }
-        return result;
+        sortedRules.forEach(r -> r.apply(word));
     }
 }

@@ -1,7 +1,7 @@
 package com.ozden.fiiltr.conj.rule;
 
 public interface Rule {
-    StringBuilder apply(String word);
+    void apply(StringBuilder word);
 
     default int getOrder() {
         return 0;
