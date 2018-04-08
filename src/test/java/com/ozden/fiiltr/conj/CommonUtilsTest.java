@@ -20,4 +20,12 @@ public class CommonUtilsTest {
         CommonUtils.removeVerbEnding(verb);
         assertEquals("blabla", verb.toString());
     }
+
+    @Test
+    public void shouldCountSyllables() {
+        assertEquals(2, CommonUtils.countSyllables("gelmek"));
+        assertEquals(1, CommonUtils.countSyllables("bak"));
+        assertEquals(3, CommonUtils.countSyllables("ağlamak"));
+        assertEquals(0, CommonUtils.countSyllables("b"));
+    }
 }

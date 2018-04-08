@@ -1,6 +1,7 @@
 package com.ozden.fiiltr.conj.rule.sentence;
 
 import com.ozden.fiiltr.conj.rule.Rule;
+import com.ozden.fiiltr.conj.rule.RuleOrder;
 import com.ozden.fiiltr.conj.rule.imperative.NegativeImperative;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,6 @@ public class NegativeSentence implements Rule {
 
     @Override
     public int getOrder() {
-        return 1;
+        return RuleOrder.SENTENCE.getOrder();
     }
 }
