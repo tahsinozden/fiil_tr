@@ -1,22 +1,42 @@
 package com.ozden.fiiltr.conj.rule;
 
+import com.ozden.fiiltr.conj.rule.sentence.NegativeSentence;
+import com.ozden.fiiltr.conj.rule.tense.Future;
+import com.ozden.fiiltr.conj.rule.tense.PresentContinuous;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class RuleCombinerTest {
 
+    @Autowired
+    private RuleCombiner ruleCombiner;
+
+    @Autowired
+    private PresentContinuous presentContinuous;
+
+    @Autowired
+    private NegativeSentence negativeSentence;
+
+    @Autowired
+    private Future future;
+
     private List<Rule> rules;
-    private RuleCombiner ruleCombiner = new RuleCombiner();
 
     @Test
     public void shouldApplyPresentContinuousAndNegativeSentenceRules() {
         rules = Lists.newArrayList(
-                TenseRule.PRESENT_CONTINUOUS,
-                NegativeSentenceRule.NEGATIVE
+                presentContinuous,
+                negativeSentence
         );
 
         StringBuilder word = new StringBuilder("ağlamak");
@@ -67,8 +87,8 @@ public class RuleCombinerTest {
     @Test
     public void shouldApplyFutureTenseAndNegativeSentenceRules() {
         rules = Lists.newArrayList(
-                TenseRule.FUTURE,
-                NegativeSentenceRule.NEGATIVE
+                future,
+                negativeSentence
         );
 
         StringBuilder word = new StringBuilder("ağlamak");

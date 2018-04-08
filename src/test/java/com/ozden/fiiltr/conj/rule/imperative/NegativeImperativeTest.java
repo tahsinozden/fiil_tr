@@ -1,54 +1,64 @@
-package com.ozden.fiiltr.conj.rule;
+package com.ozden.fiiltr.conj.rule.imperative;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertEquals;
 
-public class NegativeSentenceRuleTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class NegativeImperativeTest {
+
+    @Autowired
+    private NegativeImperative negativeImperative;
+
     @Test
-    public void shouldNegateVerb() {
+    public void shouldConjugateNegativeImperative() {
         StringBuilder word = new StringBuilder("ağlamak");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("ağlama", word.toString());
 
         word = new StringBuilder("görmek");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("görme", word.toString());
 
         word = new StringBuilder("öpmek");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("öpme", word.toString());
 
         word = new StringBuilder("gelmek");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("gelme", word.toString());
 
         word = new StringBuilder("kalmak");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("kalma", word.toString());
 
         word = new StringBuilder("susmak");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("susma", word.toString());
 
         word = new StringBuilder("üşümek");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("üşüme", word.toString());
 
         word = new StringBuilder("olmak");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("olma", word.toString());
 
         word = new StringBuilder("ısırmak");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("ısırma", word.toString());
 
         word = new StringBuilder("incitmek");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("incitme", word.toString());
 
         word = new StringBuilder("artmak");
-        NegativeSentenceRule.NEGATIVE.apply(word);
+        negativeImperative.apply(word);
         assertEquals("artma", word.toString());
     }
 }
