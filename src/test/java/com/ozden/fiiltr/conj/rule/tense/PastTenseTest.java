@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PastTenseTest {
-    
+
     @Autowired
     private Past past;
 
@@ -25,10 +25,9 @@ public class PastTenseTest {
         past.apply(word);
         assertEquals("gördü", word.toString());
 
-        // FIXME: öptü
         word = new StringBuilder("öpmek");
         past.apply(word);
-        assertEquals("öpdü", word.toString());
+        assertEquals("öptü", word.toString());
 
         word = new StringBuilder("gelmek");
         past.apply(word);
@@ -38,10 +37,9 @@ public class PastTenseTest {
         past.apply(word);
         assertEquals("kaldı", word.toString());
 
-        // FIXME: sustu
         word = new StringBuilder("susmak");
         past.apply(word);
-        assertEquals("susdu", word.toString());
+        assertEquals("sustu", word.toString());
 
         word = new StringBuilder("üşümek");
         past.apply(word);
@@ -55,14 +53,12 @@ public class PastTenseTest {
         past.apply(word);
         assertEquals("ısırdı", word.toString());
 
-        // FIXME: incitti
         word = new StringBuilder("incitmek");
         past.apply(word);
-        assertEquals("incitdi", word.toString());
+        assertEquals("incitti", word.toString());
 
-        // FIXME: arttı
         word = new StringBuilder("artmak");
         past.apply(word);
-        assertEquals("artdı", word.toString());
+        assertEquals("arttı", word.toString());
     }
 }
