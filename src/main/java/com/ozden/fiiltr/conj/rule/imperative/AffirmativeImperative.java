@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AffirmativeImperative implements Rule {
+
     @Override
     public void apply(StringBuilder word) {
         CommonUtils.removeVerbEnding(word);

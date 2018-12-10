@@ -10,6 +10,12 @@ import java.util.function.Consumer;
 @Component
 public class TenseRule {
 
+    /**
+     *
+     * @param word word to be processed
+     * @param wordRules rules which each tense has
+     * @param specialCase a case which applies verbs with one syllable, all tenses should handle it
+     */
     public void applyRuleEngine(StringBuilder word, Map<Character, String> wordRules, Consumer<StringBuilder> specialCase) {
         CommonUtils.removeVerbEnding(word);
         if (word.length() < 2) {

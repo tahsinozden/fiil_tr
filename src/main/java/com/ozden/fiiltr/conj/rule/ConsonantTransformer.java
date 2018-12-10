@@ -11,6 +11,7 @@ import java.util.Set;
 public class ConsonantTransformer {
 
     private static final Set<Character> CAUSING_TRANSFORMATION = Set.of('f', 's', 't', 'k', 'ç', 'ş', 'h', 'p');
+
     private static final Map<Character, Character> TRANSFORMATION_BY_CONSONANT = Map.of(
             'p', 'b',
             'ç', 'c',
