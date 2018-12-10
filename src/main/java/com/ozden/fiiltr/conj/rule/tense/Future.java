@@ -38,7 +38,6 @@ public class Future implements Rule {
     class FutureSpecialCase implements Consumer<StringBuilder> {
         @Override
         public void accept(StringBuilder s) {
-//                String ending = RULE_WORDS.get(s.charAt(s.length() - 1));
             String ending = tenseRule.determineEndingFromWordRoot(s.toString(), RULE_WORDS);
             s.append("y").append(ending);
         }

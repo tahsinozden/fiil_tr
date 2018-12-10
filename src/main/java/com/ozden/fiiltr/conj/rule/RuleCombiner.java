@@ -9,6 +9,7 @@ import java.util.TreeSet;
 
 @Component
 public class RuleCombiner {
+
     public void applyMultipleRules(StringBuilder word, List<Rule> rules) {
         Set<Rule> sortedRules = new TreeSet<>(Comparator.comparingInt(Rule::getOrder));
         sortedRules.addAll(rules);

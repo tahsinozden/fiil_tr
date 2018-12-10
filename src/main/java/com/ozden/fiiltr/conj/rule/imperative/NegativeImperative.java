@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NegativeImperative implements Rule {
+
     @Override
     public void apply(StringBuilder word) {
         word.deleteCharAt(word.length() - 1);

@@ -38,7 +38,6 @@ public class PresentContinuous implements Rule {
     class PresentContinuousSpecialCase implements Consumer<StringBuilder> {
         @Override
         public void accept(StringBuilder s) {
-//                String ending = RULE_WORDS.get(s.charAt(s.length() - 1));
             String ending = tenseRule.determineEndingFromWordRoot(s.toString(), RULE_WORDS);
             s.deleteCharAt(s.length() - 1).append(ending);
         }
