@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 
 @Component
 public class TenseRule {
+
     public void applyRuleEngine(StringBuilder word, Map<Character, String> wordRules, Consumer<StringBuilder> specialCase) {
         CommonUtils.removeVerbEnding(word);
         if (word.length() < 2) {
