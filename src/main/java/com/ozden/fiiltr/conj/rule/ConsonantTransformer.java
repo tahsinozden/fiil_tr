@@ -23,10 +23,7 @@ public class ConsonantTransformer {
     );
 
     public static void transform(StringBuilder word) {
-        for (int i = 0; i < word.length(); i++) {
-            if (i - 1 <= 0) {
-                continue;
-            }
+        for (int i = 1; i < word.length(); i++) {
             Character toBeTransformed = TRANSFORMATION_BY_CONSONANT.get(word.charAt(i));
             if (CAUSING_TRANSFORMATION.contains(word.charAt(i - 1)) && toBeTransformed != null) {
                 word.setCharAt(i, toBeTransformed);
