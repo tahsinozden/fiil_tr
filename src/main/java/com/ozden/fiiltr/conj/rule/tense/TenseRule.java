@@ -1,6 +1,7 @@
 package com.ozden.fiiltr.conj.rule.tense;
 
 import com.ozden.fiiltr.conj.CommonUtils;
+import com.ozden.fiiltr.conj.rule.ConsonantTransformer;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -8,6 +9,7 @@ import java.util.function.Consumer;
 
 @Component
 public class TenseRule {
+
     public void applyRuleEngine(StringBuilder word, Map<Character, String> wordRules, Consumer<StringBuilder> specialCase) {
         CommonUtils.removeVerbEnding(word);
         if (word.length() < 2) {
@@ -26,6 +28,7 @@ public class TenseRule {
             if (ending != null) break;
         }
         word.append(ending);
+        ConsonantTransformer.transform(word);
     }
 
     public String determineEndingFromWordRoot(String word, Map<Character, String> wordRules) {
