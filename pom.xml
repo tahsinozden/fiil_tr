@@ -65,6 +65,7 @@
     </dependencies>
 
     <build>
+        <finalName>fiil_tr</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
